@@ -1,18 +1,10 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4; /* Light background for contrast */
-}
-
 /* Updated Header Background */
 .navigation {
-  background-color: blue; /* Consistent header color */
+  background-color: blue;
 }
 
 .top-nav {
-  background-color: #f4f4f4; /* Light background for top navigation */
+  background-color: #f4f4f4;
   padding: 10px;
 }
 
@@ -33,7 +25,7 @@ body {
 
 .top-nav ul li a {
   text-decoration: none;
-  color: black; /* Dark text for contrast */
+  color: black;
 }
 
 .container {
@@ -48,9 +40,10 @@ body {
 }
 
 .logo h1 {
-  color: white; /* Logo text color */
+  color: white;
 }
 
+/* Navigation list for header */
 .nav-list {
   list-style: none;
   display: flex;
@@ -59,45 +52,45 @@ body {
 
 .nav-item a {
   text-decoration: none;
-  color: white; /* Link color in navigation */
+  color: white;
 }
 
+/* Icons in header */
 .icons {
   display: flex;
   gap: 15px;
 }
 
 .hamburger {
-  display: none; /* Hide hamburger menu for larger screens */
+  display: none;
 }
 
+/* Section padding */
 .section {
   padding: 20px 0;
 }
 
+/* Products container */
 .products-container {
   margin: 50px auto;
   padding: 20px;
   text-align: center;
 }
 
+/* Product list styles */
 .product-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
+/* Individual product item */
 .product-item {
   margin: 20px;
   border: 1px solid #ddd;
   padding: 15px;
   text-align: center;
   width: 200px;
-  transition: box-shadow 0.3s; /* Smooth shadow transition */
-}
-
-.product-item:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
 }
 
 .product-item img {
@@ -105,14 +98,15 @@ body {
   height: auto;
 }
 
+/* Actions container */
 .actions {
   margin-top: 20px;
 }
 
-/* Footer */
+/* Footer styles */
 footer {
-  background-color: #333; /* Dark background for footer */
-  color: white; /* White text for footer */
+  background-color: #333;
+  color: white;
   padding: 20px;
 }
 
@@ -122,7 +116,7 @@ footer {
 }
 
 .footer-content a {
-  color: white; /* White link color */
+  color: white;
   text-decoration: none;
   display: block;
   margin-bottom: 5px;
@@ -133,29 +127,31 @@ footer {
   font-size: 24px;
 }
 
-/* Responsive Design */
+/* Styles for buttons in header */
+.icon {
+  color: white;
+  font-size: 24px;
+}
+
+.icon:hover {
+  color: #ffcc00; /* Optional hover effect */
+}
+
+/* Responsive Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+}
+
 @media (max-width: 768px) {
-  .d-flex {
-    flex-direction: column; /* Stack elements on smaller screens */
-    align-items: flex-start;
-  }
-
-  .nav-list {
-    flex-direction: column; /* Stack navigation items */
-    gap: 10px;
-  }
-
-  .product-list {
-    flex-direction: column; /* Stack products on smaller screens */
-    align-items: center;
-  }
-
-  .product-item {
-    width: auto; /* Make product item width flexible */
-  }
-
   .hamburger {
-    display: block; /* Show hamburger menu on smaller screens */
-    cursor: pointer; /* Pointer for interactive element */
+    display: block; /* Show on smaller screens */
+    cursor: pointer;
+  }
+  .nav-list {
+    display: none; /* Hide nav items by default */
+    flex-direction: column; /* Stack items vertically */
+  }
+  .nav-list.active {
+    display: flex; /* Show when active */
   }
 }
