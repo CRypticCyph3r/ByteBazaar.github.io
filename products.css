@@ -43,7 +43,6 @@
   color: white;
 }
 
-/* Navigation list for header */
 .nav-list {
   list-style: none;
   display: flex;
@@ -55,7 +54,6 @@
   color: white;
 }
 
-/* Icons in header */
 .icons {
   display: flex;
   gap: 15px;
@@ -65,26 +63,22 @@
   display: none;
 }
 
-/* Section padding */
 .section {
   padding: 20px 0;
 }
 
-/* Products container */
 .products-container {
   margin: 50px auto;
   padding: 20px;
   text-align: center;
 }
 
-/* Product list styles */
 .product-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-/* Individual product item */
 .product-item {
   margin: 20px;
   border: 1px solid #ddd;
@@ -98,12 +92,11 @@
   height: auto;
 }
 
-/* Actions container */
 .actions {
   margin-top: 20px;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   background-color: #333;
   color: white;
@@ -125,33 +118,4 @@ footer {
 .footer-content i {
   margin-right: 10px;
   font-size: 24px;
-}
-
-/* Styles for buttons in header */
-.icon {
-  color: white;
-  font-size: 24px;
-}
-
-.icon:hover {
-  color: #ffcc00; /* Optional hover effect */
-}
-
-/* Responsive Hamburger Menu */
-.hamburger {
-  display: none; /* Hidden by default */
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block; /* Show on smaller screens */
-    cursor: pointer;
-  }
-  .nav-list {
-    display: none; /* Hide nav items by default */
-    flex-direction: column; /* Stack items vertically */
-  }
-  .nav-list.active {
-    display: flex; /* Show when active */
-  }
 }
