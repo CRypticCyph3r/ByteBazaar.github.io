@@ -1,50 +1,39 @@
-const products = [
-    { id: 1, name: 'Intel Core i9 Processor', price: 500.00 },
-    { id: 2, name: 'ASUS ROG Motherboard', price: 300.00 },
-    { id: 3, name: 'NVIDIA RTX 3080', price: 700.00 },
-    { id: 4, name: 'Corsair Vengeance 32GB RAM', price: 150.00 },
-    { id: 5, name: 'Samsung 970 EVO SSD 1TB', price: 100.00 },
-    { id: 6, name: 'Corsair Hydro Series CPU Cooler', price: 130.00 },
-    { id: 7, name: 'EVGA 650W Power Supply', price: 85.00 },
-    { id: 8, name: 'NZXT H510 PC Case', price: 90.00 },
-    { id: 9, name: 'LG UltraGear 27" Gaming Monitor', price: 250.00 }
-];
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-updateCartCount();
+const cartItems = document.getElementById('cart-items');
+const subtotalDisplay = document.getElementById('subtotal');
+const taxesDisplay = document.getElementById('taxes');
+const totalDisplay = document.getElementById('total');
 
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.getAttribute('data-product-id'));
-        const product = products.find(p => p.id === productId);
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-        alert(`${product.name} has been added to your cart.`);
+function populateCart() {
+    cartItems.innerHTML = ''; // Clear existing items
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        const total = item.price; // Assuming 1 quantity for simplicity
+        subtotal += total;
+
+        cartItems.innerHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td><input type="number" value="1" min="1" data-index="${index}" class="quantity-input" /></td>
+                <td>$${total.toFixed(2)}</td>
+                <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+            </tr>
+        `;
     });
-});
 
-function updateCartCount() {
-    const cartCount = document.getElementById('cart-count');
-    cartCount.textContent = cart.length;
+    const taxes = subtotal * 0.15; // 15% tax
+    const total = subtotal + taxes;
+
+    subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
+    taxesDisplay.textContent = `$${taxes.toFixed(2)}`;
+    totalDisplay.textContent = `$${total.toFixed(2)}`;
 }
 
-document.getElementById('checkout').addEventListener('click', () => {
-    if (cart.length > 0) {
+cartItems.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+        const index = e.target.getAttribute('data-index');
+        cart.splice(index, 1); // Remove item from cart
         localStorage.setItem('cart', JSON.stringify(cart));
-        window.location.href = 'invoice.html';
-    } else {
-        alert('Your cart is empty!');
-    }
-});
-
-document.getElementById('cancel').addEventListener('click', () => {
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert('Cart has been cleared.');
-});
-
-document.getElementById('exit').addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
+        populateCart();
