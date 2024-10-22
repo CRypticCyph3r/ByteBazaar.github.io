@@ -1,49 +1,38 @@
 // invoice.js
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function calculateInvoice() {
-    const tbody = document.querySelector('#invoiceTable tbody');
-    let subtotal = 0;
+// Retrieve the cart (order summary) from localStorage
+let invoiceCart = JSON.parse(localStorage.getItem('invoice')) || [];
+const invoiceItemsContainer = document.getElementById('invoice-items');
+const invoiceTotalEl = document.getElementById('invoice-total');
 
-    cart.forEach(product => {
-        const row = document.createElement('tr');
+// Function to generate the invoice
+function generateInvoice() {
+  invoiceItemsContainer.innerHTML = ''; // Clear existing items
+  let totalAmount = 0;
 
-        const productName = document.createElement('td');
-        productName.textContent = product.name;
-        row.appendChild(productName);
+  // Populate the invoice with items
+  invoiceCart.forEach(item => {
+    const total = (item.price * item.quantity).toFixed(2);
+    totalAmount += item.price * item.quantity;
 
-        const productQty = document.createElement('td');
-        productQty.textContent = 1; // For simplicity, quantity is set to 1
-        row.appendChild(productQty);
+    const itemEl = document.createElement('p');
+    itemEl.innerHTML = `${item.quantity} x ${item.name} - $${total}`;
+    invoiceItemsContainer.appendChild(itemEl);
+  });
 
-        const productPrice = document.createElement('td');
-        productPrice.textContent = `$${product.price.toFixed(2)}`;
-        row.appendChild(productPrice);
+  // Calculate the total
+  const taxes = (totalAmount * 0.15).toFixed(2);
+  const grandTotal = (parseFloat(totalAmount) + parseFloat(taxes)).toFixed(2);
 
-        const productSubtotal = document.createElement('td');
-        productSubtotal.textContent = `$${product.price.toFixed(2)}`;
-        row.appendChild(productSubtotal);
+  invoiceTotalEl.innerText = `$${grandTotal}`;
 
-        subtotal += product.price;
-
-        tbody.appendChild(row);
-    });
-
-    const tax = subtotal * 0.10;  // Assume 10% tax
-    const total = subtotal + tax;
-
-    document.getElementById('tax').textContent = tax.toFixed(2);
-    document.getElementById('total').textContent = total.toFixed(2);
+  // Optionally clear cart after confirming order
+  document.getElementById('confirm-order').addEventListener('click', () => {
+    alert('Thank you for your order!');
+    localStorage.removeItem('cart');  // Clear cart after order confirmation
+    window.location.href = 'index.html';  // Redirect to home page after confirmation
+  });
 }
 
-calculateInvoice();
-
-document.getElementById('cancel').addEventListener('click', () => {
-    localStorage.removeItem('cart');
-    alert('Invoice canceled. Cart cleared.');
-    window.location.href = 'products.html';
-});
-
-document.getElementById('exit').addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
+// Generate the invoice when the page loads
+generateInvoice();
