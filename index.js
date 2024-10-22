@@ -17,7 +17,7 @@ function validateLogin(event) {
   
   if (user) {
     // If credentials match, redirect to the product.html page
-    window.location.href = "product.html";
+    window.location.href = "products.html";
   } else {
     // If credentials don't match, show an error message
     alert("Invalid email or password. Please try again.");
