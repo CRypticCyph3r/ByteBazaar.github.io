@@ -5,8 +5,8 @@ const defaultPassword = "password123";
 // Function to validate the login form
 function validateLogin() {
   // Get form fields
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const defaultemail = document.getElementById("email").value.trim();
+  const defaultpassword = document.getElementById("password").value.trim();
 
   // Email validation (simple regex for checking email format)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
