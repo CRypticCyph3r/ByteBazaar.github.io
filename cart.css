@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cart.css" />
+    <title>Your Cart - ByteBazaar</title>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <div class="top-nav">
+      <div class="container">
+        <p>Order Online Or Call Us: (876)548-9918</p>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <div class="container">
+        <a href="#" class="logo"><h1>ByteBazaar</h1></a>
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+      <div class="container">
+        <h2>Your Cart</h2>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Intel Core i9 Processor</td>
+              <td>$500.00</td>
+              <td><input type="number" value="1" min="1" /></td>
+              <td>$500.00</td>
+              <td><button class="remove-btn">Remove</button></td>
+            </tr>
+            <tr>
+              <td>ASUS ROG Motherboard</td>
+              <td>$300.00</td>
+              <td><input type="number" value="1" min="1" /></td>
+              <td>$300.00</td>
+              <td><button class="remove-btn">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cart-summary">
+          <p><strong>Subtotal:</strong> $800.00</p>
+          <p><strong>Taxes (15%):</strong> $120.00</p>
+          <p><strong>Total:</strong> $920.00</p>
+          <button class="checkout-btn">Proceed to Checkout</button>
+          <button class="cancel-btn">Cancel Order</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="col">
+          <h4>INFORMATION</h4>
+          <a href="#">About us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Shipping Guide</a>
+        </div>
+        <div class="col">
+          <h4>USEFUL LINKS</h4>
+          <a href="#">Online Store</a>
+          <a href="#">Customer Services</a>
+          <a href="#">Promotion</a>
+          <a href="#">Top Brands</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector('.checkout-btn').addEventListener('click', function () {
+        window.location.href = 'invoice.html'; // Redirect to the invoice page
+      });
+    </script>
+  </body>
+</html>
