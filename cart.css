@@ -1,103 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="cart.css" />
-    <title>Your Cart - ByteBazaar</title>
-  </head>
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light gray background */
+}
 
-  <body>
-    <!-- Navigation -->
-    <div class="top-nav">
-      <div class="container">
-        <p>Order Online Or Call Us: (876)548-9918</p>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+/* Navigation */
+.top-nav {
+  background-color: #007bff; /* Header background color */
+  padding: 10px;
+  color: white;
+}
 
-    <div class="navigation">
-      <div class="container">
-        <a href="#" class="logo"><h1>ByteBazaar</h1></a>
-        <ul class="nav-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+.top-nav p {
+  margin: 0;
+}
 
-    <!-- Cart Section -->
-    <section class="cart-section">
-      <div class="container">
-        <h2>Your Cart</h2>
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Intel Core i9 Processor</td>
-              <td>$500.00</td>
-              <td><input type="number" value="1" min="1" /></td>
-              <td>$500.00</td>
-              <td><button class="remove-btn">Remove</button></td>
-            </tr>
-            <tr>
-              <td>ASUS ROG Motherboard</td>
-              <td>$300.00</td>
-              <td><input type="number" value="1" min="1" /></td>
-              <td>$300.00</td>
-              <td><button class="remove-btn">Remove</button></td>
-            </tr>
-          </tbody>
-        </table>
+.navigation {
+  background-color: blue; /* Navigation background */
+  padding: 10px 0;
+}
 
-        <div class="cart-summary">
-          <p><strong>Subtotal:</strong> $800.00</p>
-          <p><strong>Taxes (15%):</strong> $120.00</p>
-          <p><strong>Total:</strong> $920.00</p>
-          <button class="checkout-btn">Proceed to Checkout</button>
-          <button class="cancel-btn">Cancel Order</button>
-        </div>
-      </div>
-    </section>
+.navigation .logo h1 {
+  color: white;
+  margin: 0;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="col">
-          <h4>INFORMATION</h4>
-          <a href="#">About us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Shipping Guide</a>
-        </div>
-        <div class="col">
-          <h4>USEFUL LINKS</h4>
-          <a href="#">Online Store</a>
-          <a href="#">Customer Services</a>
-          <a href="#">Promotion</a>
-          <a href="#">Top Brands</a>
-        </div>
-      </div>
-    </footer>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    <script>
-      document.querySelector('.checkout-btn').addEventListener('click', function () {
-        window.location.href = 'invoice.html'; // Redirect to the invoice page
-      });
-    </script>
-  </body>
-</html>
+.nav-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Space between nav items */
+}
+
+.nav-list li {
+  display: inline;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Cart Section */
+.cart-section {
+  padding: 20px;
+  background-color: white; /* White background for cart section */
+  margin: 20px 0; /* Margin above and below the section */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.cart-section h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove double borders */
+  margin-bottom: 20px; /* Space below the table */
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 10px; /* Padding inside cells */
+  text-align: center; /* Center text */
+}
+
+.cart-table th {
+  background-color: #f2f2f2; /* Light gray for header */
+}
+
+/* Cart Summary */
+.cart-summary {
+  text-align: right; /* Align text to the right */
+}
+
+.cart-summary p {
+  font-size: 16px; /* Font size for summary */
+}
+
+.checkout-btn,
+.cancel-btn {
+  background-color: blue; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside buttons */
+  cursor: pointer; /* Pointer on hover */
+  margin: 5px; /* Space around buttons */
+}
+
+.checkout-btn:hover,
+.cancel-btn:hover {
+  background-color: darkblue; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center; /* Centered text in footer */
+}
+
+.footer .col {
+  margin: 20px 0; /* Space between footer columns */
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
