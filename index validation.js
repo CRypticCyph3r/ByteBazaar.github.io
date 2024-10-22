@@ -39,3 +39,8 @@ function cancelLogin() {
     window.location.href = "index.html"; // Redirect to homepage or another page
   }
 }
+
+//
+function Login() {
+      window.location.href = "products.html"; // Redirect to homepage or another page
+}
