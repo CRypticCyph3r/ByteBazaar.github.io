@@ -1,41 +1,25 @@
-// Default email and password
-const defaultEmail = "testuser@bytebazaar.com";
-const defaultPassword = "password123";
+// JavaScript code to handle login validation
+const users = [
+  { email: "user1@example.com", password: "password123" },
+  { email: "user2@example.com", password: "password456" },
+  { email: "user3@example.com", password: "password789" },
+];
 
-// Function to validate the login form
-function validateLogin() {
-  // Get form fields
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  // Email validation (simple regex for checking email format)
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return false;
-  }
-
-  // Password validation (minimum 6 characters required)
-  if (password.length < 6) {
-    alert("Password must be at least 6 characters long.");
-    return false;
-  }
-
-  // Check if the entered email and password match the default credentials
-  if (email === defaultEmail && password === defaultPassword) {
-    alert("Login successful!");
-    // Redirect to the products page
-    window.location.href = "products.html";
-    return true;
+function validateLogin(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Get email and password input values
+  const emailInput = document.getElementById("email").value;
+  const passwordInput = document.getElementById("password").value;
+  
+  // Check if the email and password match any of the users
+  const user = users.find(u => u.email === emailInput && u.password === passwordInput);
+  
+  if (user) {
+    // If credentials match, redirect to the product.html page
+    window.location.href = "product.html";
   } else {
-    alert("Incorrect email or password. Please try again.");
-    return false;
-  }
-}
-
-// Function to handle cancel button click
-function cancelLogin() {
-  if (confirm("Are you sure you want to cancel?")) {
-    window.location.href = "index.html"; // Redirect to homepage or another page
+    // If credentials don't match, show an error message
+    alert("Invalid email or password. Please try again.");
   }
 }
