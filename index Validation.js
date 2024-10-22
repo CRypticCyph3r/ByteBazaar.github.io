@@ -25,7 +25,7 @@ function validateLogin() {
   if (email === defaultEmail && password === defaultPassword) {
     alert("Login successful!");
     // Redirect to the products page
-    window.location.href = "products.html";
+    window.location.href = "Products.html";
     return true;
   } else {
     alert("Incorrect email or password. Please try again.");
