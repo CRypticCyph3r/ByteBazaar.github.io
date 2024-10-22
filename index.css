@@ -1,6 +1,6 @@
 /* General body and background */
 body {
-  background-image: url('../Assets/ByteBazaar.jpg'); /* Use a background image instead of a logo */
+  background-image: url('ByteBazaar.jpg'); /* Use a background image instead of a logo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
