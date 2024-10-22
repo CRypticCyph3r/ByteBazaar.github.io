@@ -4,6 +4,9 @@ const subtotalDisplay = document.getElementById('subtotal');
 const taxesDisplay = document.getElementById('taxes');
 const totalDisplay = document.getElementById('total');
 
+// Populate the cart when the page loads
+populateCart();
+
 function populateCart() {
     cartItems.innerHTML = ''; // Clear existing items
     let subtotal = 0;
@@ -31,9 +34,12 @@ function populateCart() {
     totalDisplay.textContent = `$${total.toFixed(2)}`;
 }
 
+// Remove item from cart
 cartItems.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
         const index = e.target.getAttribute('data-index');
         cart.splice(index, 1); // Remove item from cart
         localStorage.setItem('cart', JSON.stringify(cart));
-        populateCart();
+        populateCart(); // Re-populate cart after removal
+    }
+});
