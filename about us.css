@@ -1,0 +1,119 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+/* Top Navigation */
+.top-nav {
+  background-color: #f1f1f1;
+  padding: 10px 0;
+}
+
+.top-nav p {
+  margin: 0;
+  display: inline-block;
+}
+
+.top-nav ul {
+  float: right;
+}
+
+.top-nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Navigation */
+.navigation {
+  background-color: #333;
+  padding: 15px 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-list {
+  float: right;
+}
+
+.nav-list li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.logo h1 {
+  color: white;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-section p strong {
+  color: #333;
+}
+
+.about-section a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer .col {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5%;
+}
