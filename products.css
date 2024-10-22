@@ -1,8 +1,12 @@
-/* Updated Header Background */
-.navigation {
-  background-color: blue;
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light gray background */
 }
 
+/* Navigation */
 .top-nav {
   background-color: #f4f4f4;
   padding: 10px;
@@ -10,59 +14,46 @@
 
 .top-nav p {
   margin: 0;
+  font-size: 14px;
 }
 
-.top-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.top-nav ul li {
-  display: inline;
-  margin-left: 20px;
-}
-
-.top-nav ul li a {
-  text-decoration: none;
-  color: black;
-}
-
-.container {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.d-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navigation {
+  background-color: blue; /* Header background */
+  padding: 10px 0;
 }
 
 .logo h1 {
   color: white;
+  margin: 0;
 }
 
-.nav-list {
-  list-style: none;
+/* Flexbox layout for the navigation */
+.d-flex {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.nav-item a {
-  text-decoration: none;
-  color: white;
-}
-
+/* Icons in the navigation */
 .icons {
   display: flex;
   gap: 15px;
 }
 
-.hamburger {
-  display: none;
+.icon {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
 }
 
+.icon:hover {
+  color: #ffcc00; /* Optional hover effect */
+}
+
+/* Section for products */
 .section {
   padding: 20px 0;
 }
@@ -79,43 +70,66 @@
   flex-wrap: wrap;
 }
 
+/* Individual product item */
 .product-item {
   margin: 20px;
   border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
   padding: 15px;
   text-align: center;
   width: 200px;
+  transition: transform 0.2s; /* Add a transition effect */
+}
+
+.product-item:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .product-item img {
   width: 100%;
   height: auto;
+  border-radius: 5px; /* Round corners for images */
 }
 
-.actions {
-  margin-top: 20px;
+.product-item h3 {
+  color: #333;
+  margin: 10px 0;
 }
 
-/* Footer */
+.product-item p {
+  font-size: 18px;
+  color: #555;
+}
+
+.add-to-cart {
+  background-color: blue; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Button hover effect */
+}
+
+.add-to-cart:hover {
+  background-color: darkblue; /* Darker shade on hover */
+}
+
+/* Footer Styles */
 footer {
   background-color: #333;
   color: white;
   padding: 20px;
+  text-align: center; /* Centered text in footer */
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-content a {
+footer a {
   color: white;
   text-decoration: none;
-  display: block;
-  margin-bottom: 5px;
+  margin: 0 10px; /* Spacing between links */
 }
 
-.footer-content i {
-  margin-right: 10px;
-  font-size: 24px;
+footer a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
